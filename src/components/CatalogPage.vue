@@ -233,9 +233,6 @@ export default {
 </script>
 
 <template v-cloak>
-  <div v-if="!this.isLoggedIn()">{{this.redirect()}}</div>
-<!--  <div v-if="this.isLoggedIn">{{this.reloadData()}}</div>-->
-
   <body>
 <!--  Full css container-->
   <div class="container" id="container">
