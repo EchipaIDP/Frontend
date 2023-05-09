@@ -40,7 +40,7 @@ export default {
                 name: this.name,
                 category: this.category,
                 description: this.description
-              })
+              }, {params: {token: Cookies.get("loggedIn")}})
                   .then(function (response) {
                     router.push("catalog");
                     router.go(1);
@@ -65,7 +65,7 @@ export default {
     }, isLoggedIn() {
       console.log(Cookies.get("loggedIn"));
       console.log(Cookies.get("loggedIn") === "true");
-      return Cookies.get("loggedIn") === "true";
+      return Cookies.get("loggedIn") === "false";
     }
   }};
 </script>

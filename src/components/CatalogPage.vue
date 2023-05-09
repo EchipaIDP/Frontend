@@ -53,7 +53,7 @@ export default {
     axios
         .get('http://localhost:8080/products.json',
             { params: { page : this.pageNo, size : this.elementsPerPage , sortElem : this.currentSort,
-                direction : this.currentSortDir} })
+                direction : this.currentSortDir, token: Cookies.get("loggedIn")} })
         .then(response => {
           console.log(response.data);
           this.info = response.data["products"];
@@ -69,7 +69,7 @@ export default {
     axios
         .get('http://localhost:8080/products.json',
             { params: { page : this.pageNo, size : this.elementsPerPage , sortElem : this.currentSort,
-                direction : this.currentSortDir} })
+                direction : this.currentSortDir, token: Cookies.get("loggedIn")} })
         .then(response => {
           console.log(response.data);
           this.info = response.data["products"];
@@ -90,13 +90,13 @@ export default {
     }, isLoggedIn() {
       console.log(Cookies.get("loggedIn"));
       console.log(Cookies.get("loggedIn") === "true");
-      return Cookies.get("loggedIn") === "true";
+      return Cookies.get("loggedIn") !== "false";
 
     }, reloadData() {
       axios
           .get('http://localhost:8080/products.json',
               { params: { page : this.pageNo, size : this.elementsPerPage , sortElem : this.currentSort,
-                  direction : this.currentSortDir} })
+                  direction : this.currentSortDir, token: Cookies.get("loggedIn")} })
           .then(response => {
             console.log(response.data);
             this.info = response.data["products"];
@@ -117,6 +117,7 @@ export default {
           Accept: 'application/json',
           'content-type' : 'multipart/form-data'
         },
+        params:{token: Cookies.get("loggedIn")}
       }) .then(response => {
         this.aux = response.data;
         console.log("aux este " + this.aux);
@@ -144,7 +145,7 @@ export default {
         name: this.nameFilter,
         category: this.categoryFilter,
         description: this.descFilter
-      })
+      }, {params:{token: Cookies.get("loggedIn")}})
       this.pageNo = 0;
       this.reloadData();
     }, prevPage() {
@@ -177,7 +178,7 @@ export default {
         if (confirmed.value) {
           console.log("ajunge la modify");
           let productId = this.auxID;
-          axios.delete(`http://localhost:8080/products/delete/${productId}`)
+          axios.delete(`http://localhost:8080/products/delete/${productId}`, {params:{token: Cookies.get("loggedIn")}})
               .then((response) => {
                 console.log(response);
                 this.reloadData();
@@ -193,7 +194,7 @@ export default {
       this.reloadData();
 
     }, saveFile() {
-      axios.get('http://localhost:8080/download', {responseType: 'blob'}).then((response) => {
+      axios.get('http://localhost:8080/download', {responseType: 'blob', params:{token: Cookies.get("loggedIn")}}).then((response) => {
 
         // Log somewhat to show that the browser actually exposes the custom HTTP header
         const fileNameHeader = "products.csv";

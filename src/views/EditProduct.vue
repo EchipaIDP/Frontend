@@ -61,7 +61,7 @@ export default {
     }, isLoggedIn() {
       console.log(Cookies.get("loggedIn"));
       console.log(Cookies.get("loggedIn") === "true");
-      return Cookies.get("loggedIn") === "true";
+      return Cookies.get("loggedIn") !== "false";
     }, confirmChanges() {
       if (this.name == null || this.name.length === 0) {
         if (this.category == null || this.category.length === 0) {
@@ -89,7 +89,7 @@ export default {
               category: this.category,
               description: this.description,
               ID: this.id
-            })
+            }, {params:{token: Cookies.get("loggedIn")}})
                 .then(function (response) {
                   this.msg = null;
                   console.log(response);
