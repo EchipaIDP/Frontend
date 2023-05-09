@@ -89,8 +89,8 @@ export default {
       router.go(1);
     }, isLoggedIn() {
       console.log(Cookies.get("loggedIn"));
-      console.log(Cookies.get("loggedIn") === "true");
-      return Cookies.get("loggedIn") === "true";
+      console.log(Cookies.get("loggedIn") !== "false");
+      return Cookies.get("loggedIn") !== "false";
 
     }, reloadData() {
       axios

@@ -21,8 +21,8 @@ export default {
             .then(function (response) {
               loggedIn = response["data"];
               console.log(loggedIn);
-              Cookies.set("loggedIn", "true");
-              if (loggedIn === true) {
+              Cookies.set("loggedIn", loggedIn["token"]);
+              if (loggedIn !== false) {
                 //his.$cookies.set("loggedIn", true);
                 router.push("catalog")
               }
