@@ -18,11 +18,6 @@ const router = createRouter({
       component: () => import('../views/AddPage.vue')
     },
     {
-      path: '/removeproduct',
-      name: 'removeproduct',
-      component: () => import('../views/RemoveView.vue')
-    },
-    {
       path:'/',
       name:'Home',
       component: () => import('../views/Catalog.vue')

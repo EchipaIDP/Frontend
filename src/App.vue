@@ -3,20 +3,13 @@ import router from "./router/index.ts"
 </script>
 
 <template>
-<!--  <header class="menu">
-&lt;!&ndash;    <img alt="Vue logo" class="logo" src="../public/download.png" width="125" height="125" />&ndash;&gt;
-    <button class="btn" @click="router.push('/')"><img src="../public/download.png" style="height: 100px;width: 100px"/></button>
-  </header>-->
+
 
   <router-view />
 </template>
 
 <style>
 @import '@/assets/base.css';
-/*@import '../node_modules/@syncfusion/ej2-base/styles/material.css';
-@import '../node_modules/@syncfusion/ej2-buttons/styles/material.css';
-@import '../node_modules/@syncfusion/ej2-popups/styles/material.css';
-@import '../node_modules/@syncfusion/ej2-splitbuttons/styles/material.css';*/
 
 #app {
   max-width: 1280px;

@@ -45,56 +45,6 @@ export default {
 </script>
 
 <template>
-<!--  <body>
-  <div class="container border" style="position:fixed; left: 0; top:0;width:100%">
-    <div class="row-xxl-100" style="background-color: orange; text-align: center; min-height: 60px; min-width: 2000px;left:-100px">
-      <h1>Application Header</h1>
-    </div>
-    <div class="row">
-      <div class="col" style="max-width: 150px; background-color: beige">
-        <button class="btn" @click="$router.push('catalog');$router.go(1);"><img src="../../public/download1.png" style="height: 100px;width: 100px" alt=""/></button>
-      </div>
-      <div class="col-xxl">
-        <h1 style="position: relative; top:30%"></h1>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col" style="max-width: 150px; background-color: beige; min-height: 2000px">
-        <button class="btn btn-toolbar" @click="$router.push('/catalog');$router.go(1)" style="position: relative; top:5%;left:12.5%; font-weight: bold;">Catalog</button>
-      </div>
-      <div class="col-xxl" style="font-size: 30px">
-        <table>
-          <th>
-            Login
-          </th>
-          <tr>
-            Username: <input v-model="this.username"/>
-          </tr>
-          <tr>
-            Password: <input type="password" @keyup.enter="sendForm" v-model="this.password" style="position: relative;right:-1.9%"/>
-          </tr>
-          <tr>
-            <button class="btn btn-success" @click="sendForm">Log in</button>
-          </tr>
-        </table>
-      </div>
-    </div>
-  </div>-->
-<!--  </body>-->
-<!--  <header class="title">Login Page</header>
-  <div class="loginForm">Login</div>
-  <div class="loginFormUsername">
-    Username: <input v-model="this.username"/>
-  </div>
-  <div class="loginFormPassword">
-    Password: <input type="password" @keyup.enter="sendForm" v-model="this.password"/>
-  </div>
-  <div class="confirmButton">
-    <button class="btn btn-success" @click="sendForm">Log in</button>
-  </div>-->
-
-
-
   <body>
     <div class="container-fluid" id="container">
       <div class="row">
@@ -133,7 +83,7 @@ export default {
 
         </div>
         <div class="col-sm-6 px-0 d-none d-sm-block">
-          <img src="2792347.jpg"
+          <img src="books.jpg"
                alt="Login image" class="w-100 vh-100" id="loginImg">
         </div>
       </div>
