@@ -14,7 +14,7 @@ export default {
   }, methods: {
     sendForm() {
         console.log("intra in functie");
-        axios.post('http://localhost:8080/login', {
+        axios.post('http://localhost:8083/api/auth/signin', {
           username: this.username,
           password: this.password
         })
