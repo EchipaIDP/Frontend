@@ -65,7 +65,7 @@ export default {
     }, isLoggedIn() {
       console.log(Cookies.get("loggedIn"));
       console.log(Cookies.get("loggedIn") === "true");
-      return Cookies.get("loggedIn") === "false";
+      return Cookies.get("loggedIn") !== "false";
     }
   }};
 </script>
