@@ -1,8 +1,12 @@
-FROM vladr2001/idpfrontend_01:0.0.1
+FROM vuejs/ci
 
+RUN mkdir /home/project
+COPY . /home/project
 WORKDIR /home/project/Frontend
-RUN git pull
 RUN npm install
+RUN npm install bootstrap@5
+RUN npm install @popperjs/core
 
 EXPOSE 3000
+
 ENTRYPOINT [ "npm", "run", "dev", "--", "--host" ]
