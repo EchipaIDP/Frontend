@@ -329,7 +329,7 @@ export default {
                 <div class="frame">
                   <div class="center1">
                     <div class="title1">
-                      <h4>Drop CSV file to upload</h4>
+                      <h4>Drop CSV file to upload...</h4>
                     </div>
 
                     <div class="dropzone">
