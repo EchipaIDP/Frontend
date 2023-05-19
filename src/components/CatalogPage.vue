@@ -50,7 +50,7 @@ export default {
   }, beforeMount() {
     console.log(this.pageNo);
     if (Cookies.get("loggedIn") == null) {
-      Cookies.set("loggedn", "false");
+      Cookies.set("loggedIn", "false");
     }
     this.listSize = 0;
     axios
