@@ -49,9 +49,12 @@ export default {
     }
   }, beforeMount() {
     console.log(this.pageNo);
+    if (Cookies.get("loggedIn") == null) {
+      Cookies.set("loggedn", "false");
+    }
     this.listSize = 0;
     axios
-        .get('http://localhost:8080/products.json',
+        .get('https://bookservice.idproj.me/products.json',
             { params: { page : this.pageNo, size : this.elementsPerPage , sortElem : this.currentSort,
                 direction : this.currentSortDir, token: Cookies.get("loggedIn")} })
         .then(response => {
