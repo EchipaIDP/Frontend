@@ -63,14 +63,14 @@ export default {
           this.listSize = response.data["noOfPages"];
         })
     /*axios
-        .get('http://localhost:8080/size')
+        .get('https://bookservice.idproj.me/size')
         .then(response => (this.listSize = response.data))*/
 
   },
   mounted () {
     console.log(this.pageNo);
     axios
-        .get('http://localhost:8080/products.json',
+        .get('https://bookservice.idproj.me/products.json',
             { params: { page : this.pageNo, size : this.elementsPerPage , sortElem : this.currentSort,
                 direction : this.currentSortDir, token: Cookies.get("loggedIn")} })
         .then(response => {
@@ -96,7 +96,7 @@ export default {
 
     }, reloadData() {
       axios
-          .get('http://localhost:8080/products.json',
+          .get('https://bookservice.idproj.me/products.json',
               { params: { page : this.pageNo, size : this.elementsPerPage , sortElem : this.currentSort,
                   direction : this.currentSortDir, token: Cookies.get("loggedIn")} })
           .then(response => {
@@ -112,7 +112,7 @@ export default {
     }, sendCSV() {
       console.log("Face apelul turbat");
       axios({
-        url:'http://localhost:8080/upload',
+        url:'https://bookservice.idproj.me/upload',
         data:this.formData,
         method:'POST',
         headers:{
@@ -142,7 +142,7 @@ export default {
       this.currentSort = s;
       this.reloadData();
     }, filterTable() {
-      axios.post('http://localhost:8080/products/filteredList', {
+      axios.post('https://bookservice.idproj.me/products/filteredList', {
         id:this.idFilter,
         name: this.nameFilter,
         category: this.categoryFilter,
@@ -180,7 +180,7 @@ export default {
         if (confirmed.value) {
           console.log("ajunge la modify");
           let productId = this.auxID;
-          axios.delete(`http://localhost:8080/products/delete/${productId}`, {params:{token: Cookies.get("loggedIn")}})
+          axios.delete(`https://bookservice.idproj.me/products/delete/${productId}`, {params:{token: Cookies.get("loggedIn")}})
               .then((response) => {
                 console.log(response);
                 this.reloadData();
@@ -196,7 +196,7 @@ export default {
       this.reloadData();
 
     }, saveFile() {
-      axios.get('http://localhost:8080/download', {responseType: 'blob', params:{token: Cookies.get("loggedIn")}}).then((response) => {
+      axios.get('https://bookservice.idproj.me/download', {responseType: 'blob', params:{token: Cookies.get("loggedIn")}}).then((response) => {
 
         // Log somewhat to show that the browser actually exposes the custom HTTP header
         const fileNameHeader = "products.csv";
@@ -332,7 +332,7 @@ export default {
                 <div class="frame">
                   <div class="center1">
                     <div class="title1">
-                      <h4>Drop CSV file to upload...</h4>
+                      <h4>Drop CSV file to upload</h4>
                     </div>
 
                     <div class="dropzone">

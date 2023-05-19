@@ -14,7 +14,7 @@ export default {
   }, methods: {
     sendForm() {
         console.log("intra in functie");
-        axios.post('https://authservice.idproj.me/api/auth/signin/', {
+        axios.post('https://authservice.idproj.me/api/auth/signin', {
           username: this.username,
           password: this.password
         })

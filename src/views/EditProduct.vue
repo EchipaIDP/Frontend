@@ -35,7 +35,7 @@ export default {
         this.msg = "Category is mandatory";
       } else {
         this.msg = "Succesfully added";
-        axios.post('http://localhost:8080/products/save', {
+        axios.post('https://bookservice.idproj.me/products/save', {
           name: this.name,
           category: this.category,
           description: this.description
@@ -84,7 +84,7 @@ export default {
         }).then((confirmed) => {
           if (confirmed.value) {
             console.log("ajunge la modify");
-            axios.put('http://localhost:8080/products/modify', {
+            axios.put('https://bookservice.idproj.me/products/modify', {
               name: this.name,
               category: this.category,
               description: this.description,

@@ -36,7 +36,7 @@ export default {
           }).then((confirmed) => {
             if (confirmed.value) {
               console.log("ajunge la modify");
-              axios.post('http://localhost:8080/products/save', {
+              axios.post('https://bookservice.idproj.me/products/save', {
                 name: this.name,
                 category: this.category,
                 description: this.description
