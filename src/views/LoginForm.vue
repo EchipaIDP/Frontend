@@ -83,7 +83,7 @@ export default {
 
         </div>
         <div class="col-sm-6 px-0 d-none d-sm-block">
-          <img src="books.jpg"
+          <img src="../../public/books.jpg"
                alt="Login image" class="w-100 vh-100" id="loginImg">
         </div>
       </div>
