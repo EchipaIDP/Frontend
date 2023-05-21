@@ -2,8 +2,8 @@ FROM node
 
 RUN mkdir /home/project
 RUN mkdir /home/project/Frontend
-COPY ./* /home/project/Frontend
-WORKDIR /home/project/Frontend
+COPY ./* /home/project/Frontend/
+WORKDIR /home/project/Frontend/
 RUN npm install
 RUN npm install bootstrap@5
 RUN npm install @popperjs/core
