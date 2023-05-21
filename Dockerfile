@@ -1,7 +1,8 @@
 FROM node
 
 RUN mkdir /home/project
-COPY . /home/project
+RUN mkdir /home/project/Frontend
+COPY ./* /home/project/Frontend
 WORKDIR /home/project/Frontend
 RUN npm install
 RUN npm install bootstrap@5
